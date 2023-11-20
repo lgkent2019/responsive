@@ -1,0 +1,121 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Multimedia</title>
+<meta charset = "UTF-8"/>
+<meta name="description" content="Adding multimedia to our site.">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="pagebox">
+<header>
+<h1>MULTIMEDIA FANS</h1>
+</header>
+
+<nav>
+<div class="topnav">
+<a class="current" href="index.html">Home</a>
+<a href="#">Content</a>
+<a href="#">About Us</a>
+</div>
+</nav>
+
+<article>
+<section>
+<h2>Small Image</h2>
+<p>
+<img class="smallpic" src="images/pic1.jpg" alt="Picture of microphone">
+Here is some text to go along with our small floated image.</p>
+<hr/>
+</section>
+
+<section>
+<h2>Large Image</h2>
+<img class="bigpic" src="images/pic2.jpg" alt="Picture of camera">
+<p>Here is some text to go along with our large image.</p>
+<hr/>
+</section>
+
+<section>
+<h2>Sound</h2>
+<audio controls>
+<source src="audio/sound1.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<p>Ukulele can be downloaded free at bensound.com</p>
+<hr/>
+</section>
+
+<section id="slideshow">
+<h2>Slideshow</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 2</div>
+  <img src="images/pic1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 2</div>
+  <img src="images/pic2.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+<hr/>
+</section>
+
+<section>
+<h2>Video</h2>
+<div class="video_container">
+<iframe src="https://www.youtube.com/embed/nhB_isJFYRY?si=T_pgVJb7bOxb1sQs"></iframe>
+</div>
+<hr/>
+</section>
+</article>
+
+<footer>
+<p>This page was created by Lynnette &copy; 2023</p>
+</footer>
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>
